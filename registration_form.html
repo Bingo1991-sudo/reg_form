@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" >
+    <link rel="stylesheet" type="text/css" href="css/reg.css" >
+     <link rel="stylesheet" type="text/css" href="css/icomoon.css" >
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/registration-form.js"></script>
+    <script src="js/jquery.maskedinput.min.js"></script>
+     <script src="js/selectize.js"></script>
+</head>
+<body>
+<div class="tabs js-tabs-wr">
+    <ul>
+        <li>
+            <input type="radio" name="tabs-0" checked="checked" id="tabs-0" />
+            <label for="tabs-0">Частное <br>лицо</label>
+            <div class="reg-wr">
+                    <form class="reg-form js-reg-form-0" name="regform-0" action="#" method="post">
+                    	<div class="logo-wr">
+                 		<img src="img/logo123.gif">
+                 		<h3 class="h3">Регистрация<br><span class="reg-role">частного лица</span></h3>
+                     <p>Вы планируете оплачивать заказы в офисе регистрации, в случае оплаты заказов через банк платежи будут
+                    Вами оформляться как платеж от частного лица на счет организации. Отношения между Вами и магазином будут
+                    регламентироваться законом 'О защите прав потребителей'</p>
+                 	</div>
+                     <div class="form-raw">
+                        <div class="form-col">
+                            <select class="form-select" size="1" name="region[]" data-validate>
+                                <option disabled>Регион обслуживания</option>
+                                <option value="Курск" selected>Курск</option>
+                                <option value="Регион 2">Регион 2</option>
+                            </select>
+                        </div>
+                        <div class="form-col">
+                            <select class="form-select" size="1"name="office[]" data-validate>
+                                <option disabled>Офис обслуживания</option>
+                                <option value="Курск" selected>Офис 1</option>
+                                <option value="Офис 2">Офис 2</option>
+                            </select>
+                        </div>
+                        <div class="form-col">
+                            <a href="#map-modal" class="map-btn"><span class="icon-location"></span></a>
+                        </div>
+                    </div>
+                    <div class="form-raw">
+                    	<div class="form-col">
+                    		<input type="text" name="surname" id="surname" placeholder="Фамилия" data-validate autocomplete="off" />
+                        	<span class="err-rfield">обязательно для заполнения</span>
+                    	</div>
+                    </div>
+                      <div class="form-raw">
+                      	<div class="form-col">
+                      		<input type="text" name="name-0" id="name-0" placeholder="Имя" data-validate autocomplete="off" />
+                       		<span class="err-rfield">обязательно для заполнения</span>
+                      	</div>
+                    </div>
+                      <div class="form-raw">
+                        <input type="text" name="patronymic-0" id="patronymic-0" placeholder="Отчество" autocomplete="off" />
+                    </div>
+                     <div class="form-raw">
+                        <div class="form-col">
+                            <input type="text" name="email-0" id="email-0" placeholder="E-mail" data-validate class="js-email email" autocomplete="off"/>
+                            <span class="err-mail">неверный формат</span>
+                            <span class="err-rfield">обязательно для заполнения</span>
+                        </div>
+                        <div class="form-col">
+                             <input type="tel" name="phone-0" id="phone-0" placeholder="Телефон" data-validate autocomplete="off" />
+                             <span class="err-rfield">обязательно для заполнения</span>
+                        </div>
+                    </div>
+                     <div class="form-raw">
+                        <div class="form-col">
+                            <input type="password" maxlength="20" name="password-0" id="password-0" placeholder="Пароль от 6 символов" class="password" data-validate autocomplete="off" />
+                            <span class="err-length">не менее 6 символов</span>
+                            <span class="err-rfield">обязательно для заполнения</span>
+                        </div>
+                        <div class="form-col">
+                             <input type="password" maxlength="20" id="confirm-0" class="confirm" placeholder="Подтверждение пароля" class="" data-validate autocomplete="off" />
+                             <span class="err">пароли не совпадают</span>
+                             <span class="err-rfield">обязательно для заполнения</span>
+                         </div>
+                    </div>
+                   <div class="form-raw">
+                     		<input type="checkbox" class="form-check" name="agreement-0" value="" id="agreement-0" autocomplete="off" /><span>Я даю согласие на обработку настоящих персональных данных на условиях и для целей, определённых <a href="#!" class="agreement">соглашением</a></span>
+                    </div>	
+                    <div class="form-raw">
+                    	<button type="submit" value="Зарегистрироваться" class="reg-btn" id="reg-btn-0" disabled="disabled"><a href="#success-modal">Зарегистрироваться</a></button>
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li>
+            <input type="radio" name="tabs-0" id="tabs-1" />
+            <label for="tabs-1">Юридическое<br> лицо</label>
+            <div class="reg-wr">
+                 <form class="reg-form js-reg-form-1" name="regform-1" action="#" method="post" id="reg-form-1">
+                 	<div class="logo-wr">
+                 		<img src="img/logo123.gif">
+                 		<h3 class="h3">Регистрация<span class="reg-role">юридического лица</span></h3>
+                     <p>Ваши платежи будут выполняться только со счета организации. Отношения между вами и магазином будут
+                    регламентироваться договором. Ознакомиться и подписать договор вы сможете в офисе регистрации
+                    </p>
+                 	</div>
+                    	  <div class="form-raw">
+                    	  	<div class="form-col">
+                    	  		<input type="checkbox" class="form-check" name="as-dealer" value="" id="as-dealer" autocomplete="off"><span>Я хочу зарегистрироваться как дилер</span>
+                    	  	</div>
+                   		 </div>	
+                   		 <div class="form-raw">
+                   		 	 <div class="form-col">
+                    	  		<p class="condition-for-dealer hide" id="for-dealer">Список условий для регистрации в качестве дилера</p>
+                    	  	</div>
+                   		 </div>
+                    	<div class="form-raw">
+                    		<div class="form-col">
+                    			<select class="form-select" size="1" name="type[]">
+	                                <option disabled>Тип</option>
+	                                <option value="ИП" selected>ИП</option>
+	                                <option value="ООО">ООО</option>
+	                                <option value="ООО">ЗАО</option>
+	                            </select>	
+                    		</div>
+                            <div class="form-col">
+                            	<input type="text" name="INN" id="INN-1" placeholder="ИНН" data-validate autocomplete="off" class="js-inn" />
+                            	<span class="err-inn">неверный формат</span>
+                            	<span class="err-rfield">обязательно для заполнения</span>
+                            </div>
+                        </div>
+                        <div class="form-raw">
+                        	 <div class="form-col">
+                        	 	<input type="text" name="agency" id="agensy" placeholder="Наименование организации" data-validate autocomplete="off" />
+                        	 	<span class="err-rfield">обязательно для заполнения</span>
+                            </div>
+                        </div>
+                          <div class="form-raw">
+                        	 <div class="form-col">
+                            	<input type="text" name="address" id="address-1" placeholder="Адрес" autocomplete="off" class="js-address address hide" />
+                            </div>
+                        </div>
+                     <div class="form-raw js-region-select-wr region-select-wr" >
+                        <div class="form-col">
+                            <select class="form-select size="1" name="region[]">
+                                <option disabled>Регион обслуживания</option>
+                                <option value="Курск" selected>Курск</option>
+                                <option value="Регион 2">Регион 2</option>
+                            </select>
+                        </div>
+                        <div class="form-col">
+                            <select class="form-select" size="1"name="office[]">
+                                <option disabled>Офис обслуживания</option>
+                                <option value="Курск" selected>Офис 1</option>
+                                <option value="Офис 2">Офис 2</option>
+                            </select>
+                        </div>
+                        <div class="form-col">
+                            <a href="#map-modal" class="map-btn"><span class="icon-location"></span></a>
+                        </div>
+                    </div>
+                    <div class="form-raw">
+                    	<div class="form-col">
+                    		<input type="text" name="surname-0" id="surname-0" placeholder="Фамилия" data-validate autocomplete="off" />
+                        	<span class="err-rfield">обязательно для заполнения</span>
+                    	</div>
+                    </div>
+                      <div class="form-raw">
+                      	<div class="form-col">
+                      		<input type="text" name="name-1" id="name-1" placeholder="Имя" data-validate autocomplete="off" />
+                        	<span class="err-rfield">обязательно для заполнения</span>
+                      	</div>
+                    </div>
+                      <div class="form-raw">
+                        <input type="text" name="patronymic-1" id="patronymic-1" placeholder="Отчество" autocomplete="off" />
+                    </div>
+                     <div class="form-raw">
+                        <div class="form-col">
+                            <input type="text" name="email-1" id="email-1" placeholder="E-mail" data-validate class="js-email email" autocomplete="off" />
+                            <span class="err-mail">неверный формат</span>
+                            <span class="err-rfield">обязательно для заполнения</span>
+                        </div>
+                        <div class="form-col">
+                             <input type="tel" name="phone-1" id="phone-1" placeholder="Телефон" data-validate autocomplete="off" />
+                             <span class="err-rfield">обязательно для заполнения</span>
+                        </div>
+                    </div>
+                     <div class="form-raw">
+                        <div class="form-col">
+                            <input type="password" maxlength="20" name="password-1" id="password-1" placeholder="Пароль от 6 символов" class="password" data-validate autocomplete="off" />
+                            <span class="err-length">не менее 6 символов</span>
+                            <span class="err-rfield">обязательно для заполнения</span>
+                        </div>
+                        <div class="form-col">
+                             <input type="password" maxlength="20" name="confirm-1" id="confirm-1" class="confirm" placeholder="Подтверждение пароля" data-validate autocomplete="off" />
+                              <span class="err">пароли не совпадают</span>
+                              <span class="err-rfield">обязательно для заполнения</span>
+                         </div>
+                    </div>
+
+                     <div class="form-raw">
+                     		<input type="checkbox" class="form-check" name="agreement-1" value="" id="agreement-1" autocomplete="off" ><span>Я даю согласие на обработку настоящих персональных данных на условиях и для целей, определённых <a href="#!" class="agreement">соглашением</a></span>
+                    </div>	
+                    <div class="form-raw">
+                    	<button type="submit" value="Зарегистрироваться" class="reg-btn" id="reg-btn-1" disabled="disabled"><a href="#success-modal">Зарегистрироваться</a></button>
+                    </div>
+                </form>
+            </div>
+        </li>
+        <li>
+            <input type="radio" name="tabs-0" id="tabs-2" />
+            <label for="tabs-2">Представитель<br> поставщика</label>
+            <div class="reg-wr">
+                 <form class="reg-form js-reg-form-2" name="regform-2" action="#" method="post">
+                    	<div class="logo-wr">
+                 		<img src="img/logo123.gif">
+                 		<h3 class="h3">Регистрация<span class="reg-role">представителя поставщика</span></h3>
+                    <p>Отношения между вами и магазином будут регламентироваться договором. Ознакомиться и подписать договор вы сможете в офисе регистрации
+                    </p>
+                 	</div>
+                 	<div class="form-raw">
+                		<div class="form-col">
+                			<select class="form-select" size="1" name="type[]">
+                                <option disabled>Тип</option>
+                                <option value="ИП" selected>ИП</option>
+                                <option value="ООО">ООО</option>
+                                <option value="ООО">ЗАО</option>
+                            </select>	
+                		</div>
+                        <div class="form-col">
+                        	<input type="text" name="INN" id="INN-2" placeholder="ИНН" data-validate autocomplete="off" class="js-inn" />
+                        	<span class="err-inn">неверный формат</span>
+                        	<span class="err-rfield">обязательно для заполнения</span>
+                        </div>
+                    </div>
+                 	<div class="form-raw">
+                    	 <div class="form-col">
+                    	 	<input type="text" name="agency" id="agensy" placeholder="Наименование организации" data-validate autocomplete="off" />
+                    	 	<span class="err-rfield">обязательно для заполнения</span>
+                        </div>
+                    </div>
+                    	<div class="form-raw">
+	                        <div class="form-col">
+	                        	<input type="text" name="address" id="address" placeholder="Адрес" data-validate autocomplete="off" />
+	                        	<span class="err-rfield">обязательно для заполнения</span>
+	                        </div>
+	                    </div>
+                    <div class="form-raw">
+                    	<div class="form-col">
+                    		<input type="text" name="surname-1" id="surname-1" placeholder="Фамилия" data-validate autocomplete="off" />
+                        	<span class="err-rfield">обязательно для заполнения</span>
+                    	</div>
+                    </div>
+                      <div class="form-raw">
+                      	<div class="form-col">
+                      		<input type="text" name="name-2" id="name-2" placeholder="Имя" data-validate autocomplete="off"/>
+                        	<span class="err-rfield">обязательно для заполнения</span>
+                      	</div>
+                    </div>
+                      <div class="form-raw">
+                        <input type="text" name="patronymic-2" id="patronymic-2" placeholder="Отчество" autocomplete="off" />
+                    </div>
+                     <div class="form-raw">
+                        <div class="form-col">
+                            <input type="text" name="email-2" id="email-2" placeholder="E-mail" data-validate class="js-email email" autocomplete="off" />
+                            <span class="err-mail">неверный формат</span>
+                            <span class="err-rfield">обязательно для заполнения</span>
+                        </div>
+                        <div class="form-col">
+                             <input type="tel" name="phone-2" id="phone-2" placeholder="Телефон" data-validate autocomplete="off" />
+                             <span class="err-rfield">обязательно для заполнения</span>
+                        </div>
+                    </div>
+                     <div class="form-raw">
+                        <div class="form-col">
+                            <input type="password" maxlength="20" name="password-2" id="password-2" placeholder="Пароль от 6 символов" class="password" data-validate autocomplete="off" />
+                            <span class="err-length">не менее 6 символов</span>
+                            <span class="err-rfield">обязательно для заполнения</span>
+                        </div>
+                        <div class="form-col">
+                             <input type="password" maxlength="20" name="confirm-2" id="confirm-2" class="confirm" placeholder="Подтверждение пароля" data-validate autocomplete="off" />
+                              <span class="err">пароли не совпадают</span>
+                              <span class="err-rfield">обязательно для заполнения</span>
+                         </div>
+                    </div>
+
+                     <div class="form-raw">
+                     		<input type="checkbox" class="form-check" name="agreement-2" value="" id="agreement-2" autocomplete="off" ><span>Я даю согласие на обработку настоящих персональных данных на условиях и для целей, определённых <a href="#!" class="agreement">соглашением</a></span>
+                    </div>	
+                    <div class="form-raw">
+                    	<button type="submit" value="Зарегистрироваться" class="reg-btn" id="reg-btn-2" disabled="disabled"><a href="#success-modal">Зарегистрироваться</a></button>
+                    </div>
+                </form>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<div id="map-modal" class="map-modal">
+  	<div class="map-modal-wr">
+      <div class="map-modal_inner">
+         <div class="map-modal_header">
+          	<h3 class="map-modal_title">Выберите офис обслуживания</h3>
+          	<a href="#close" title="Закрыть" class="map-close">×</a>
+         </div>
+        <div class="map-modal_content">   
+        	<div class="map-modal_col-left">
+        		<iframe marginwidth="0" marginheight="0" style="background-image:url('img/map.png'); background-position: top; background-repeat: repeat; background-size: 100%"></iframe>
+        	</div> 
+        	<div class="map-modal_col-right">
+        		Список поставщиков
+        		Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщиков
+				Список поставщико
+
+        	</div> 
+        </div>
+	 </div>
+	</div>	
+</div>
+
+<div id="success-modal" class="success-modal">
+    <div class="success-modal-wr">
+      <div class="success-modal_inner">
+         <div class="success-modal_header">
+              <h3 class="success-modal_title">Подтверждение регистрации на портале ADEO.PRO</h3>
+              <a href="#close" title="Закрыть" class="success-close">×</a>
+           </div>
+          <div class="sucess-modal_content">   
+            <p class="js-success-error success" data-error="Указанного вами адреса электронной почты не существует" data-success="Для продолжения регистрации перейдите по ссылке в письме, которое было отправлено на ваш электронный адрес."></p> 
+            </div> 
+          </div>
+      </div>
+   </div>
+
+<script type="text/javascript">
+$(function(){
+  $("#phone-0").mask("+7 (999) 999-9999");
+  $("#phone-1").mask("+7 (999) 999-9999");
+  $("#phone-2").mask("+7 (999) 999-9999");
+});
+</script>
+
+</body>
+</html>
